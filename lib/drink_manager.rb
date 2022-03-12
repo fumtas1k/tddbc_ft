@@ -1,11 +1,10 @@
 require_relative "drink"
 
 class DrinkManager
-  def initialize
+  def initialize(initial_list = [[:coke, 120, 5], [:water, 100, 5], [:redbull, 200, 5]])
     @drinks = Hash.new{|hash, key| hash[key] = []}
-    initial_list = [[:coke, 120], [:water, 100], [:redbull, 200]]
-    initial_list.each {|name, price| produce_drink(name, price)}
-    initial_list.each{|name, _| @drinks[Drink.send(name)] = [Drink.send(name)] * 5}
+    initial_list.each {|name, price, _| produce_drink(name, price)}
+    initial_list.each{|name, _, count| @drinks[Drink.send(name)] = [Drink.send(name)] * count}
   end
 
   def list
@@ -29,10 +28,10 @@ class DrinkManager
   end
 
   # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
-  def store(drink)
+  def store(drink, count = 1)
     if drink.instance_of?(Drink)
       produce_drink(drink.name, drink.price) unless @drinks.key?(drink)
-      @drinks[drink] << drink
+      count.times{@drinks[drink] << drink}
       stock(drink)
     end
   end
