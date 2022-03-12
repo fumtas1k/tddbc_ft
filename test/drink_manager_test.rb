@@ -23,7 +23,7 @@ class DrinkManagerTest < Minitest::Test
     assert_equal 0, @drink_manager.stock(Drink.new(:orange, 110))
   end
   def test_stock_when_no_stock
-    @drink_manager.instance_variable_set(:@list, {Drink.coke => []})
+    @drink_manager.instance_variable_set(:@drinks, {Drink.coke => []})
     assert_equal 0, @drink_manager.stock(Drink.coke)
   end
 
@@ -61,7 +61,7 @@ class DrinkManagerTest < Minitest::Test
     assert_equal 4, @drink_manager.stock(Drink.coke)
   end
   def test_extract_when_insufficient_drink
-    @drink_manager.instance_variable_set(:@list, {Drink.coke => []})
+    @drink_manager.instance_variable_set(:@drinks, {Drink.coke => []})
     refute @drink_manager.extract(Drink.coke)
   end
   def test_extract_when_no_stock_drink
