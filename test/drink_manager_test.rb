@@ -27,23 +27,6 @@ class DrinkManagerTest < Minitest::Test
     assert_equal 0, @drink_manager.stock(Drink.coke)
   end
 
-  def test_purchasable_when_coke_and_sufficient_money
-    assert @drink_manager.purchasable?(Drink.coke, 120)
-  end
-  def test_purchasable_when_coke_and_insufficient_money
-    refute @drink_manager.purchasable?(Drink.coke, 100)
-  end
-  def test_purchasable_when_not_stock_drink
-    refute @drink_manager.purchasable?(Drink.new(:orange, 110), 120)
-  end
-
-  def test_purchasable_list_when_sufficient_money
-    assert_equal [Drink.coke, Drink.water, Drink.redbull], @drink_manager.purchasable_list(200)
-  end
-  def test_purchasable_list_when_insufficient_money
-    assert_equal [], @drink_manager.purchasable_list(50)
-  end
-
   def test_store_when_coke
     assert_equal 6, @drink_manager.store(Drink.coke)
     assert_equal 6, @drink_manager.stock(Drink.coke)
