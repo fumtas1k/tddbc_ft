@@ -7,11 +7,11 @@ class Drink
   end
 
   def inspect
-    name
+    "Drink.#{name}"
   end
 
   def to_s
-    name.to_s
+    "Drink.#{name}"
   end
 
   def hash
