@@ -19,14 +19,6 @@ class DrinkManager
     @drinks[drink].size
   end
 
-  def purchasable?(drink, money)
-    drink.instance_of?(Drink) && drink.price <= money.to_i && stock(drink) > 0
-  end
-
-  def purchasable_list(money)
-    @drinks.keys.select{|drink| drink.price <= money.to_i}
-  end
-
   # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
   def store(drink, count = 1)
     if drink.instance_of?(Drink)
