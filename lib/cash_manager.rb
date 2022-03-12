@@ -28,7 +28,7 @@ class CashManager
     if purchasable?(drink)
       @sale_amount += drink.price
       @amount -= drink.price
-      [@juice_manager.extract(drink), refund]
+      [@drink_manager.extract(drink), refund]
     end
   end
 
