@@ -1,5 +1,5 @@
 class Drink
-  atter_reader :name, :price
+  attr_reader :name, :price
 
   def initialize(name, price)
     @name = name
@@ -8,6 +8,10 @@ class Drink
 
   def inspect
     name
+  end
+
+  def to_s
+    name.to_s
   end
 
   def hash
