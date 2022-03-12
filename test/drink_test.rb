@@ -7,10 +7,10 @@ class DrinkTest < Minitest::Test
   end
 
   def test_inspect
-    assert_equal @coke.inspect, @coke.name
+    assert_equal "Drink.coke", @coke.inspect
   end
   def test_to_s
-    assert_equal @coke.to_s, @coke.name.to_s
+    assert_equal "Drink.coke", @coke.to_s
   end
 
   def test_eql_when_same_drink_and_same_class
