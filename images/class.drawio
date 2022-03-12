@@ -1,110 +1,110 @@
 <mxfile host="65bd71144e">
     <diagram id="vx6oxS6ZHn596iYr04OZ" name="ページ1">
-        <mxGraphModel dx="968" dy="228" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="357" dy="359" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="CashManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="20" y="50" width="240" height="320" as="geometry"/>
+                    <mxGeometry x="14" y="50" width="260" height="320" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="+ MONEY: Array [Integer]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="26" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="26" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="+ amount: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="52" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="52" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="+ sale_amount: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="78" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="78" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="+ drink_manager: DrinkManager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="104" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="104" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="130" width="240" height="8" as="geometry"/>
+                    <mxGeometry y="130" width="260" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="+ insert(Integer): Integer or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="138" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="138" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="+ amount: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="164" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="164" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="+ sale_amount: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="190" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="190" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="+ refund: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="216" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="216" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="+ purchasable?:  True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="242" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="242" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="+ purchase(Drink): Drink or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="268" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="268" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="+ purchasable_list: Array[Drink]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="294" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="294" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="DrinkManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="293.5" y="50" width="240" height="242" as="geometry"/>
+                    <mxGeometry x="287.5" y="50" width="256.5" height="242" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="+ drinks: Hash[Drink =&gt; [Integer, Integer]]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="26" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="26" width="256.5" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="52" width="240" height="8" as="geometry"/>
+                    <mxGeometry y="52" width="256.5" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="+ list: drinks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="60" width="240" height="26" as="geometry"/>
+                <mxCell id="54" value="+ produce_drink(Symbol, Integer): Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="60" width="256.5" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="+ stoke?(Drink): Integer or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="86" width="240" height="26" as="geometry"/>
+                <mxCell id="24" value="+ list: Hash[Drink =&gt;[Integer, Integer]]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="86" width="256.5" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="+ price?(Drink): Integer or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="112" width="240" height="26" as="geometry"/>
+                <mxCell id="33" value="+ stoke?(Drink): True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="112" width="256.5" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" value="+ purchasable?(Integer):  True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="138" width="240" height="26" as="geometry"/>
+                <mxCell id="31" value="+ purchasable?(Drink, Integer):  True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="138" width="256.5" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="+ purchasable_list(Integer): Array[Drink]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="164" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="164" width="256.5" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="+ store(Drink): Integer or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="190" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="190" width="256.5" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="+ extract(Drink): Integer or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="216" width="240" height="26" as="geometry"/>
+                <mxCell id="27" value="+ extract(Drink): Drink or Nil" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="216" width="256.5" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="Drink" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="570" y="50" width="240" height="268" as="geometry"/>
+                    <mxGeometry x="564" y="50" width="260" height="268" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="+ name: Symbol" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="26" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="26" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="+ price: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="52" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="52" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="78" width="240" height="8" as="geometry"/>
+                    <mxGeometry y="78" width="260" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value="+ name: Symbol" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="86" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="86" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="+ price: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="112" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="112" width="260" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="45" value="+ inspect: Symbol" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="138" width="240" height="26" as="geometry"/>
+                <mxCell id="45" value="+ inspect: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+                    <mxGeometry y="138" width="260" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" value="+ to_s: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="36">
-                    <mxGeometry y="164" width="240" height="26" as="geometry"/>
+                <mxCell id="53" value="+ to_s: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+                    <mxGeometry y="164" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="+ hash: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="190" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="190" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="48" value="+ eql?(Drink): True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="216" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="216" width="260" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" value="+ ==(Drink): True or False" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
-                    <mxGeometry y="242" width="240" height="26" as="geometry"/>
+                    <mxGeometry y="242" width="260" height="26" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
