@@ -2,9 +2,7 @@ require_relative "drink"
 
 class DrinkManager
   def initialize(initial_list = [[:coke, 120, 5], [:water, 100, 5], [:redbull, 200, 5]])
-    @drinks = Hash.new{|hash, key| hash[key] = []}
-    initial_list.each{|name, price, _| produce_drink(name, price)}
-    initial_list.each{|name, _, count| @drinks[name] = [Drink.send(name)] * count}
+    @drinks = produce_drinks(initial_list)
   end
 
   def exist?(name)
@@ -49,5 +47,15 @@ class DrinkManager
     Drink.define_singleton_method(name) do
       Drink.new(name, price)
     end
+  end
+
+  def produce_drinks(initial_list)
+    # 初期値を空のArrayとしたHashを準備
+    drinks = Hash.new{|hash, key| hash[key] = []}
+    # Drink.名前のクラスメソッドを作成
+    initial_list.each{|name, price, _| produce_drink(name, price)}
+    # drinksにnameをkeyとし、Drinkクラスのインスタンスを配列にしたHashを生成
+    initial_list.each{|name, _, count| drinks[name] += [Drink.send(name)] * count}
+    drinks
   end
 end
