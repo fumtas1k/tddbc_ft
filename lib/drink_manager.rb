@@ -3,33 +3,43 @@ require_relative "drink"
 class DrinkManager
   def initialize(initial_list = [[:coke, 120, 5], [:water, 100, 5], [:redbull, 200, 5]])
     @drinks = Hash.new{|hash, key| hash[key] = []}
-    initial_list.each {|name, price, _| produce_drink(name, price)}
-    initial_list.each{|name, _, count| @drinks[Drink.send(name)] = [Drink.send(name)] * count}
+    initial_list.each{|name, price, _| produce_drink(name, price)}
+    initial_list.each{|name, _, count| @drinks[name] = [Drink.send(name)] * count}
+  end
+
+  def exist?(name)
+    Drink.respond_to?(name)
   end
 
   def list
     list = {}
-    @drinks.each do |drink, stock|
-      list[drink] = [drink.price, stock.size]
+    @drinks.each do |name, stock|
+      list[name] = [price(name), stock(name)]
     end
     list
   end
 
-  def stock(drink)
-    @drinks[drink].size
+  def price(name)
+    if Drink.respond_to?(name)
+      Drink.send(name).price
+    end
+  end
+
+  def stock(name)
+    @drinks[name].size
   end
 
   # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
   def store(drink, count = 1)
     if drink.instance_of?(Drink)
-      produce_drink(drink.name, drink.price) unless @drinks.key?(drink)
-      count.times{@drinks[drink] << drink}
-      stock(drink)
+      produce_drink(drink.name, drink.price) unless @drinks.key?(drink.name)
+      count.times{@drinks[drink.name] << drink}
+      stock(drink.name)
     end
   end
 
-  def extract(drink)
-    @drinks[drink].shift if stock(drink) > 0
+  def extract(name)
+    @drinks[name].shift if stock(name) > 0
   end
 
   private

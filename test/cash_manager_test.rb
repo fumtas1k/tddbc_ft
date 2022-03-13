@@ -29,41 +29,41 @@ class CashManagerTest < Minitest::Test
   def test_purchasable_when_coke_and_sufficient_money
     @cash_manager.insert(100)
     2.times{@cash_manager.insert(10)}
-    assert @cash_manager.purchasable?(Drink.coke)
+    assert @cash_manager.purchasable?(:coke)
   end
   def test_purchasable_when_coke_and_insufficient_money
     @cash_manager.insert(100)
-    refute @cash_manager.purchasable?(Drink.coke)
+    refute @cash_manager.purchasable?(:coke)
   end
   def test_purchasable_when_not_stock_drink
     @cash_manager.insert(100)
     2.times{@cash_manager.insert(10)}
-    refute @cash_manager.purchasable?(Drink.new(:orange, 110))
+    refute @cash_manager.purchasable?(:orange)
   end
 
   def purchase_test_when_sufficient_money_and_sufficient_drink
     @cash_manager.insert(500)
-    assert_equal [Drink.coke, 380], @cash_manager.purchase(Drink.coke)
+    assert_equal [Drink.coke, 380], @cash_manager.purchase(:coke)
     assert_equal 380, @cash_manager.sale_amount
     assert_equal 0, @cash_manager.amount
   end
   def purchase_test_when_insufficient_money_and_sufficient_drink
     @cash_manager.insert(100)
-    refute @cash_manager.purchase(Drink.coke)
+    refute @cash_manager.purchase(:coke)
     assert_equal 0, @cash_manager.sale_amount
     assert_equal 100, @cash_manager.amount
   end
   def purchase_test_when_sufficient_money_and_insufficient_drink
     @cash_manager.insert(500)
     5.times{ @drink_manager.extract }
-    refute @cash_manager.purchase(Drink.coke)
+    refute @cash_manager.purchase(:coke)
     assert_equal 0, @cash_manager.sale_amount
     assert_equal 500, @cash_manager.amount
   end
 
   def test_purchasable_list_when_sufficient_money
     2.times{@cash_manager.insert(100)}
-    assert_equal [Drink.coke, Drink.water, Drink.redbull], @cash_manager.purchasable_list
+    assert_equal [:coke, :water, :redbull], @cash_manager.purchasable_list
   end
   def test_purchasable_list_when_insufficient_money
     2.times{@cash_manager.insert(10)}

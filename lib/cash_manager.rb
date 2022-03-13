@@ -20,19 +20,21 @@ class CashManager
     temp
   end
 
-  def purchasable?(drink)
-    drink.instance_of?(Drink) && drink.price <= amount && @drink_manager.stock(drink) > 0
+  def purchasable?(name)
+    if @drink_manager.exist?(name)
+      @drink_manager.price(name) <= amount && @drink_manager.stock(name) > 0
+    end
   end
 
-  def purchase(drink)
-    if purchasable?(drink)
-      @sale_amount += drink.price
-      @amount -= drink.price
-      [@drink_manager.extract(drink), refund]
+  def purchase(name)
+    if purchasable?(name)
+      @sale_amount += @drink_manager.price(name)
+      @amount -= @drink_manager.price(name)
+      [@drink_manager.extract(name), refund]
     end
   end
 
   def purchasable_list
-    @drink_manager.list.keys.select{|drink| drink.price <= amount && @drink_manager.stock(drink) > 0}
+    @drink_manager.list.keys.select{|name| purchasable?(name)}
   end
 end
