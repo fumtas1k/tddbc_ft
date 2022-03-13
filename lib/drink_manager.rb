@@ -1,44 +1,43 @@
 require_relative "drink"
 
 class DrinkManager
-  def initialize
-    @drinks = Hash.new{|hash, key| hash[key] = []}
-    initial_list = [[:coke, 120], [:water, 100], [:redbull, 200]]
-    initial_list.each {|name, price| produce_drink(name, price)}
-    initial_list.each{|name, _| @drinks[Drink.send(name)] = [Drink.send(name)] * 5}
+  def initialize(initial_list = [[:coke, 120, 5], [:water, 100, 5], [:redbull, 200, 5]])
+    @drinks = produce_drinks(initial_list)
+  end
+
+  def exist?(name)
+    Drink.respond_to?(name)
   end
 
   def list
     list = {}
-    @drinks.each do |drink, stock|
-      list[drink] = [drink.price, stock.size]
+    @drinks.each do |name, stock|
+      list[name] = [price(name), stock(name)]
     end
     list
   end
 
-  def stock(drink)
-    @drinks[drink].size
-  end
-
-  def purchasable?(drink, money)
-    drink.instance_of?(Drink) && drink.price <= money.to_i && stock(drink) > 0
-  end
-
-  def purchasable_list(money)
-    @drinks.keys.select{|drink| drink.price <= money.to_i}
-  end
-
-  # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
-  def store(drink)
-    if drink.instance_of?(Drink)
-      produce_drink(drink.name, drink.price) unless @drinks.key?(drink)
-      @drinks[drink] << drink
-      stock(drink)
+  def price(name)
+    if Drink.respond_to?(name)
+      Drink.send(name).price
     end
   end
 
-  def extract(drink)
-    @drinks[drink].shift if stock(drink) > 0
+  def stock(name)
+    @drinks[name].size
+  end
+
+  # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
+  def store(drink, count = 1)
+    if drink.instance_of?(Drink)
+      produce_drink(drink.name, drink.price) unless @drinks.key?(drink.name)
+      count.times{@drinks[drink.name] << drink}
+      stock(drink.name)
+    end
+  end
+
+  def extract(name)
+    @drinks[name].shift if stock(name) > 0
   end
 
   private
@@ -48,5 +47,15 @@ class DrinkManager
     Drink.define_singleton_method(name) do
       Drink.new(name, price)
     end
+  end
+
+  def produce_drinks(initial_list)
+    # 初期値を空のArrayとしたHashを準備
+    drinks = Hash.new{|hash, key| hash[key] = []}
+    # Drink.名前のクラスメソッドを作成
+    initial_list.each{|name, price, _| produce_drink(name, price)}
+    # drinksにnameをkeyとし、Drinkクラスのインスタンスを配列にしたHashを生成
+    initial_list.each{|name, _, count| drinks[name] += [Drink.send(name)] * count}
+    drinks
   end
 end
