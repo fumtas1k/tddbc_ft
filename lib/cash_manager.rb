@@ -37,6 +37,6 @@ class CashManager
   end
 
   def purchasable_list
-    @drink_manager.list.keys.select{|name| purchasable?(name)}
+    @drink_manager.stock_list.keys.select{|name| purchasable?(name)}
   end
 end

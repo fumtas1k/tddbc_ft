@@ -82,7 +82,7 @@ vm.refund # => 100
 
 ```ruby
 # ドリンクリストの取得
-vm.list #=> {:coke => [120, 5], :water => [100, 5], :redbull => [200, 5]
+vm.stock_list #=> {:coke => [120, 5], :water => [100, 5], :redbull => [200, 5]
 
 # 価格の取得
 vm.price :coke #=> 120

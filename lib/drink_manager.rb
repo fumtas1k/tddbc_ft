@@ -9,7 +9,7 @@ class DrinkManager
     Drink.respond_to?(name)
   end
 
-  def list
+  def stock_list
     list = {}
     @drinks.each do |name, stock|
       list[name] = [price(name), stock(name)]
@@ -27,10 +27,10 @@ class DrinkManager
     @drinks[name].size
   end
 
-  # listにないドリンクの場合、Drinkクラスにそのドリンク名のクラスメソッドを作成する
+  # Drinkクラスにドリンク名のクラスメソッドがなければ、Drinkクラスにそのドリンク名のクラスメソッドを作成する
   def store(drink, count = 1)
     if drink.instance_of?(Drink)
-      produce_drink(drink.name, drink.price) unless @drinks.key?(drink.name)
+      produce_drink(drink.name, drink.price) unless Drink.respond_to?(drink.name)
       count.times{@drinks[drink.name] << drink}
       stock(drink.name)
     end

@@ -13,8 +13,8 @@ class VendingMachineTest < Minitest::Test
     assert Drink.public_methods.include?(:redbull)
   end
 
-  def test_list
-    assert_equal({:coke => [120, 5], :water => [100, 5], :redbull => [200, 5]}, @vending_machine.list)
+  def test_stock_list
+    assert_equal({:coke => [120, 5], :water => [100, 5], :redbull => [200, 5]}, @vending_machine.stock_list)
   end
 
   def test_exist_when_drink_exist
