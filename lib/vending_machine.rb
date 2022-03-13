@@ -3,8 +3,8 @@ require_relative "drink_manager"
 
 class VendingMachine
 
-  def initialize
-    @drink_manager = DrinkManager.new([[:coke, 120, 5], [:water, 100, 5], [:redbull, 200, 5]])
+  def initialize(*list)
+    @drink_manager = DrinkManager.new(*list)
     @cash_manager = CashManager.new(@drink_manager)
 
     cash_manager_methods = @cash_manager.public_methods(false)
