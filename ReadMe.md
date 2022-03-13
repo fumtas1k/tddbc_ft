@@ -59,7 +59,7 @@ require_relative "lib/vending_machine"
 vm = VendingMachine.new
 
 # ドリンクをオリジナルで設定したい場合は、以下のように引数を配列の入れ子構造で指定する
-vm = VendingMachine.new([[:coke, 120, 5], [:water, 100, 2]], [:redbull, 200, 1])
+vm2 = VendingMachine.new([[:coke, 120, 1], [:water, 100, 100]])
 ```
 
 ### お金の投入、投入金額の総計の取得、払い戻し
