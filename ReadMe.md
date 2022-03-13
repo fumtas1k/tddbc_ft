@@ -1,4 +1,6 @@
-#　初めに
+#　自販機プログラム
+
+## 初めに
 
 自動販売機
 下記の課題に取り組んだものである。
@@ -6,13 +8,13 @@
 
 [TDD Boot Camp 大阪 3.0/課題( #tddbc )](http://devtesting.jp/tddbc/?TDDBC%E5%A4%A7%E9%98%AA3.0%2F%E8%AA%B2%E9%A1%8C)
 
-# class設計
+## class設計
 
 CashManager, DrinkManager, Drinkの３つのクラスを作成し、それぞれに機能を持たせる。VendingMachineは、CashManager, DrinkManagerを統合して操作するインターフェイスとしての機能。
 
 ![class](images/class.png)
 
-# 初期設定
+## 初期設定
 
 - 自動販売機は、インスタンス化したときのドリンクの初期値は以下の通り。
 
@@ -40,10 +42,10 @@ CashManager, DrinkManager, Drinkの３つのクラスを作成し、それぞれ
   Drink.redbull # => Drink.new(:redbull, 200) と同じ意味
   ```
 
-# 未解決問題
+## 未解決問題
 - ドリンクは、Drinkクラスでインスタンス化しているが、名前と値段を保持している。したがって、後で値段設定を変更しても、すでにインスタンス化したものの値段は変わらない。
 
-# 使用方法
+## 使用方法
 
 以下は、irbで実行。
 
