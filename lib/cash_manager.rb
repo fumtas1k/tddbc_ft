@@ -12,9 +12,12 @@ class CashManager
   end
 
   def insert(money)
-    return money unless money.to_s =~ /\A[1-9]\d*\z/ && MONEY.include?(money.to_i)
-    @amount += money.to_i
-    return
+    if money.to_s =~ /\A[1-9]\d*\z/ && MONEY.include?(money.to_i)
+      @amount += money.to_i
+      return
+    else
+      money
+    end
   end
 
   def refund

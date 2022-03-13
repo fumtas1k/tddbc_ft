@@ -18,9 +18,7 @@ class DrinkManager
   end
 
   def price(name)
-    if Drink.respond_to?(name)
-      Drink.send(name).price
-    end
+    Drink.send(name).price if Drink.respond_to?(name)
   end
 
   def stock(name)

@@ -57,7 +57,7 @@ class VendingMachineTest < Minitest::Test
   end
 
   def test_store_when_not_drink
-    refute @vending_machine.store(:coke)
+    assert_nil @vending_machine.store(:coke)
   end
 
   def test_extract_when_sufficient_drink
@@ -67,16 +67,16 @@ class VendingMachineTest < Minitest::Test
 
   def test_extract_when_insufficient_drink
     5.times{@vending_machine.extract(:coke)}
-    refute @vending_machine.extract(:coke)
+    assert_nil @vending_machine.extract(:coke)
   end
 
   def test_extract_when_no_stock_drink
-    refute @vending_machine.extract(:orange)
+    assert_nil @vending_machine.extract(:orange)
   end
 
   # CashManagerの機能確認
   def test_insert_when_correct_money
-    refute @vending_machine.insert(100)
+    assert_nil @vending_machine.insert(100)
     assert_equal 100, @vending_machine.amount
   end
 
@@ -122,7 +122,7 @@ class VendingMachineTest < Minitest::Test
 
   def purchase_test_when_insufficient_money_and_sufficient_drink
     @vending_machine.insert(100)
-    refute @vending_machine.purchase(:coke)
+    assert_nil @vending_machine.purchase(:coke)
     assert_equal 0, @vending_machine.sale_amount
     assert_equal 100, @vending_machine.amount
   end
@@ -130,7 +130,7 @@ class VendingMachineTest < Minitest::Test
   def purchase_test_when_sufficient_money_and_insufficient_drink
     @vending_machine.insert(500)
     5.times{ @drink_manager.extract }
-    refute @vending_machine.purchase(:coke)
+    assert_nil @vending_machine.purchase(:coke)
     assert_equal 0, @vending_machine.sale_amount
     assert_equal 500, @vending_machine.amount
   end

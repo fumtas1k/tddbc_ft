@@ -56,7 +56,7 @@ class DrinkManagerTest < Minitest::Test
   end
 
   def test_store_when_not_drink
-    refute @drink_manager.store(:coke)
+    assert_nil @drink_manager.store(:coke)
   end
 
   def test_extract_when_sufficient_drink
@@ -66,10 +66,10 @@ class DrinkManagerTest < Minitest::Test
 
   def test_extract_when_insufficient_drink
     @drink_manager.instance_variable_set(:@drinks, {:coke => []})
-    refute @drink_manager.extract(:coke)
+    assert_nil @drink_manager.extract(:coke)
   end
 
   def test_extract_when_no_stock_drink
-    refute @drink_manager.extract(:orange)
+    assert_nil @drink_manager.extract(:orange)
   end
 end

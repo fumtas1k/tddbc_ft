@@ -8,7 +8,7 @@ class CashManagerTest < Minitest::Test
   end
 
   def test_insert_when_correct_money
-    refute @cash_manager.insert(100)
+    assert_nil @cash_manager.insert(100)
     assert_equal 100, @cash_manager.amount
   end
 
@@ -54,7 +54,7 @@ class CashManagerTest < Minitest::Test
 
   def purchase_test_when_insufficient_money_and_sufficient_drink
     @cash_manager.insert(100)
-    refute @cash_manager.purchase(:coke)
+    assert_nil @cash_manager.purchase(:coke)
     assert_equal 0, @cash_manager.sale_amount
     assert_equal 100, @cash_manager.amount
   end
@@ -62,7 +62,7 @@ class CashManagerTest < Minitest::Test
   def purchase_test_when_sufficient_money_and_insufficient_drink
     @cash_manager.insert(500)
     5.times{ @drink_manager.extract }
-    refute @cash_manager.purchase(:coke)
+    assert_nil @cash_manager.purchase(:coke)
     assert_equal 0, @cash_manager.sale_amount
     assert_equal 500, @cash_manager.amount
   end
