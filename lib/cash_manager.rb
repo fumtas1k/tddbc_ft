@@ -1,4 +1,5 @@
 require_relative "drink_manager"
+require_relative "money"
 
 class CashManager
   attr_reader :amount, :sale_amount
@@ -41,5 +42,13 @@ class CashManager
 
   def purchasable_list
     @drink_manager.stock_list.keys.select{|name| purchasable?(name)}
+  end
+
+  private
+  def self.produce_all_money
+    [[:c, 1], [:c, 5], [:c, 10], [:c, 50],
+    [:c, 100], [:c, 500], [:b, 1000],
+    [:b, 2000], [:b, 5000], [:b, 10000]].each do |value, material|
+      Money.produce_money(value, material)
   end
 end
